@@ -30,7 +30,7 @@ class Runner(object):
             logging.info("Module Path: " + str(test_set_path))
             logging.info("")
 
-            command = "pytest " + test_set_path + " --html=report.html --self-contained-html --capture=tee-sys --junitxml=report.xml -v --color=yes"
+            command = "pytest " + test_set_path + " --html=index.html --self-contained-html --capture=tee-sys --junitxml=report.xml -v --color=yes"
  
             logging.info("###########################")
             logging.info("######### COMMAND #########")
