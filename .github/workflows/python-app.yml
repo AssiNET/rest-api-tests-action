@@ -36,7 +36,7 @@ jobs:
       id: html_preview_ios
       uses: pavi2410/html-preview-action@v2
       with:
-        html_file: 'Report.html' 
+        html_file: 'report.html' 
 
     - name: Print HTML Link
       run: |
@@ -46,4 +46,4 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "*.xml"
+        junit_files: "results/latest/*.xml"
