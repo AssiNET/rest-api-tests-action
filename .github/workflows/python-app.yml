@@ -42,11 +42,11 @@ jobs:
       run: |
         echo '${{ steps.html_preview_ios.outputs.url }}'
         
-    - name: Publish Test Results - iOS
+    - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "./results/latest/*.xml"
+        junit_files: "results/latest/*.xml"
 
     - name: Get Allure history
       uses: actions/checkout@v2
