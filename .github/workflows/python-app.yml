@@ -30,7 +30,7 @@ jobs:
         
     - name: Test with pytest
       run: |
-        python runner.py -set smoke_test
+        python runner.py --set smoke_test
         
     - name: HTML Preview
       id: html_preview_ios
