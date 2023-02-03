@@ -1,0 +1,8 @@
+**/*$py.class
+**/*py.class
+**/*.pyc
+Report.html
+Report.xml
+results
+/.vscode/*
+content/*.png
