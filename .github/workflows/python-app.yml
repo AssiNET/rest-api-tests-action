@@ -46,4 +46,4 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "results/latest/*.xml"
+        junit_files: "./results/latest/*.xml"
