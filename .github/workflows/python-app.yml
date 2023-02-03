@@ -31,42 +31,16 @@ jobs:
     - name: Test with pytest
       run: |
         python runner.py --set smoke_test
-        
-    - name: Get test results history
-      uses: actions/checkout@v3
-      if: always()
-      continue-on-error: true
+      
+    - name: Publish HTML report to testresults.marcusfelling.com
+      if: always() # We want this to always run, even if test fail prior to this step running
+      uses: peaceiris/actions-gh-pages@v3.7.3
       with:
-        ref: gh-pages
-        path: gh-pages
-        
-    - name: Test local action
-      uses: ./html-reporter-github-pages@main
-      if: always()
-      id: test-results
-      with:
-        test_results: results/latest
-        gh_pages: gh-pages
-        results_history: results-history
-        
-    - name: Publish Github Pages
-      if: ${{ always() }}
-      uses: peaceiris/actions-gh-pages@v3.8.0
-      with:
-        github_token: ${{ secrets.ASSI_TOKEN_GITHUB }}
-        publish_branch: gh-pages
-        publish_dir: results-history
-        keep_files: true 
-        
-    - name: Post the link to the report
-      if: always()
-      uses: Sibz/github-status-action@v1
-      with: 
-          authToken: ${{secrets.GITHUB_TOKEN}}
-          context: 'Test report'
-          state: 'success'
-          sha: ${{ github.event.pull_request.head.sha }}
-          target_url: AssiNET.github.io/rest-api-tests-action/${{ github.run_number }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: results/latest/ # This is where index.html will be output
+        keep_files: true # Set this to true to make sure we don't wipe out the other content in GitHub Pages
+        user_name: 'github-actions[bot]' # This will be the username that gets stamped in the repo commit
+        user_email: 'github-actions[bot]@users.noreply.github.com' # This will be the user email that gets stamped in the repo commit
         
     #- name: HTML Preview
     #  id: html_preview_ios
