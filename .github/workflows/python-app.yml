@@ -66,7 +66,7 @@ jobs:
           context: 'Test report'
           state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
-          target_url: PavanMudigonda.github.io/html-reporter-github-pages/${{ github.run_number }}
+          target_url: AssiNET.github.io/rest-api-tests-action/${{ github.run_number }}
         
     #- name: HTML Preview
     #  id: html_preview_ios
