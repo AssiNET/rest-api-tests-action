@@ -71,4 +71,4 @@ jobs:
       env:
         PERSONAL_TOKEN: ${{ secrets.ASSI_TOKEN_GITHUB }}
         PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+        PUBLISH_DIR: allure_results
