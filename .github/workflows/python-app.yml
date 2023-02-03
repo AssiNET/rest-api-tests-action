@@ -48,20 +48,6 @@ jobs:
       with:
         junit_files: "results/latest/*.xml"
 
-    - name: Get Allure history
-      uses: actions/checkout@v2
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
-
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      with:
-        allure_results: "results/latest/report.html"
-        
         
         
 
