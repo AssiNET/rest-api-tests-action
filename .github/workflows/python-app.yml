@@ -36,7 +36,7 @@ jobs:
       id: html_preview_ios
       uses: pavi2410/html-preview-action@v2
       with:
-        html_file: 'report.html' 
+        html_file: 'results/latest/report.html' 
 
     - name: Print HTML Link
       run: |
@@ -46,7 +46,7 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "results/latest/*.xml"
+        junit_files: "results/latest/report.xml"
 
     - name: GH Pages Push
       uses: PavanMudigonda/html-reporter-github-pages/composite@v1.1
@@ -54,11 +54,3 @@ jobs:
         test_results: results/latest
         keep_reports: 20
 
-
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{ secrets.ASSI_TOKEN_GITHUB }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure_results
