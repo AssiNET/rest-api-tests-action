@@ -56,8 +56,7 @@ jobs:
         git add .
         git commit -m "Publish HTML Report"
         git push -f origin gh-pages
-        git push -f https://${{ secrets.ASSI_TOKEN_GITHUB }}:x-oauth-basic@github.com/AssiNET/rest-api-tests-action.git
-         gh-pages
+        git push -f https://${{ secrets.ASSI_TOKEN_GITHUB }}@github.com/AssiNET/rest-api-tests-action.git gh-pages
          
         
     #- name: HTML Preview
