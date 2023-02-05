@@ -55,6 +55,14 @@ jobs:
         paths: "latest/*.xml"
       if: always()
         
+        
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        junit_files: "*.xml"
+          
+          
     #- name: Deploy HTML Report
     #  run: |
     #    git config --local user.email "Assi.Ivomir@gmail.com"
