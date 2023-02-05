@@ -47,6 +47,15 @@ jobs:
         user_name: 'github-actions[bot]' # This will be the username that gets stamped in the repo commit
         user_email: 'github-actions[bot]@users.noreply.github.com' # This will be the user email that gets stamped in the repo commit
         
+    - name: Deploy HTML Report
+      run: |
+        git checkout -b gh-pages
+        cp -R path/to/report/. .
+        git add .
+        git commit -m "Publish HTML Report"
+        git push -f origin gh-pages
+
+        
     #- name: HTML Preview
     #  id: html_preview_ios
     #  uses: pavi2410/html-preview-action@v2
