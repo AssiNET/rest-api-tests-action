@@ -53,7 +53,7 @@ jobs:
       if: always()
       uses: Sibz/github-status-action@v1
       with: 
-          authToken: ${{secrets.GITHUB_TOKEN}}
+          authToken: ${{secrets.ASSI_TOKEN_GITHUB}}
           context: 'Test report'
           state: 'success'
           sha: ${{ github.event.pull_request.head.sha }}
@@ -70,7 +70,7 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "latest/*.xml"
+        junit_files: "latest/report.xml"
           
           
     #- name: Deploy HTML Report
