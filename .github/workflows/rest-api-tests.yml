@@ -1,7 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Python application
+name: REST API Framework
 
 on:
   push:
@@ -15,15 +12,16 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -45,7 +43,6 @@ jobs:
         github_token: ${{ secrets.ASSI_TOKEN_GITHUB }}
         publish_branch: gh-pages
         publish_dir: results/latest # This is where index.html will be output
-        #force_orphan: true
         keep_files: true # Set this to true to make sure we don't wipe out the other content in GitHub Pages
         user_name: 'github-actions[bot]' # This will be the username that gets stamped in the repo commit
         user_email: 'github-actions[bot]@users.noreply.github.com' # This will be the user email that gets stamped in the repo commit
