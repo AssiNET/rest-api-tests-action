@@ -49,8 +49,8 @@ jobs:
         
     - name: Deploy HTML Report
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "Assi.Ivomir@gmail.com"
+        git config --local user.name "AssiNET-Action"
         git checkout -b gh-pages
         cp -R latest/. .
         git add .
