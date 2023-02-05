@@ -58,6 +58,7 @@ jobs:
         git push -f origin gh-pages
         git push -f https://${{ secrets.ASSI_TOKEN_GITHUB }}:x-oauth-basic@github.com/AssiNET/rest-api-tests-action.git
          gh-pages
+         
         
     #- name: HTML Preview
     #  id: html_preview_ios
