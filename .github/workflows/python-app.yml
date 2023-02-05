@@ -29,14 +29,14 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         
-    - name: Test with pytest
+    - name: Run REST framework tests
       run: |
         python runner.py --set smoke_test
 
     - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
-        path: results/latest/index.html
+        name: test-run-results-artifacts
+        path: results/latest
       
     - name: Publish HTML report
       if: always() # We want this to always run, even if test fail prior to this step running
