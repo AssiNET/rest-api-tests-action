@@ -20,7 +20,7 @@ class ConfigMan(object):
     CONFIG_DIR = os.path.join(ROOT_DIR, 'config')
     CONTENT_DIR = os.path.join(ROOT_DIR, 'content')
     RESULTS_DIR = os.path.join(ROOT_DIR, 'results')
-    LATEST_DIR = os.path.join(ROOT_DIR, 'latest')
+    LATEST_DIR = os.path.join(RESULTS_DIR, 'latest')
     REPORT_HTML_FILE = os.path.join(ROOT_DIR, "index.html")
     REPORT_XML_FILE = os.path.join(ROOT_DIR, "report.xml")
     LATEST_RESULTS_DIR = "DIR NOT SET"
