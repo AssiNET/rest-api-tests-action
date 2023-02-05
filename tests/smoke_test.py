@@ -34,7 +34,7 @@ logging.basicConfig(format='%(message)s',level=logging.INFO)
 
 ###########################
 #### GLOBAL CONSTANTS  ####
-ConfigMan.DEFAULT_RESPONSE_TIME = 1
+ConfigMan.DEFAULT_RESPONSE_TIME = 5
 ConfigMan.BACKEND_URL = "https://ssd-api.jpl.nasa.gov/cad.api"
 
 ###########################
