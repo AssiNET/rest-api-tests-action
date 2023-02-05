@@ -49,6 +49,16 @@ jobs:
         user_name: 'github-actions[bot]' # This will be the username that gets stamped in the repo commit
         user_email: 'github-actions[bot]@users.noreply.github.com' # This will be the user email that gets stamped in the repo commit
         
+    - name: Post the link to the report
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with: 
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          context: 'Test report'
+          state: 'success'
+          sha: ${{ github.event.pull_request.head.sha }}
+          target_url: PavanMudigonda.github.io/html-reporter-github-pages/${{ github.run_number }}
+
     - name: Test Summary
       uses: test-summary/action@v2
       with:
@@ -60,7 +70,7 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       if: always()
       with:
-        junit_files: "*.xml"
+        junit_files: "latest/*.xml"
           
           
     #- name: Deploy HTML Report
