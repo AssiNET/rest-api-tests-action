@@ -49,6 +49,7 @@ jobs:
         keep_files: true # Set this to true to make sure we don't wipe out the other content in GitHub Pages
         user_name: 'github-actions[bot]' # This will be the username that gets stamped in the repo commit
         user_email: 'github-actions[bot]@users.noreply.github.com' # This will be the user email that gets stamped in the repo commit
+        report_url: https://assinet.github.io/rest-api-tests-action
         
     - name: Post the link to the report
       if: always()
