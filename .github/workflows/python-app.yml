@@ -50,7 +50,7 @@ jobs:
     - name: Deploy HTML Report
       run: |
         git checkout -b gh-pages
-        cp -R latest/index.html
+        cp -R latest/. .
         git add .
         git commit -m "Publish HTML Report"
         git push -f origin gh-pages
