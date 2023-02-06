@@ -44,13 +44,7 @@ timestamp_time = str(datetime.datetime.now().strftime("%H_%M_%S"))
 
 class SmokeTests(unittest.TestCase):
 
-    def setUp(self):
-        print("")
-        print("##############################################################")
-        print("#####", self.id())
-        print("##############################################################")
-
-    def test_100_Register_New_User(self):
+    def test_100_Verify_Close_Approach_Data(self):
         headers = {
             'user-agent': 'Chrome/109.0.0.0',
             'content-type': 'application/json',
@@ -74,6 +68,46 @@ class SmokeTests(unittest.TestCase):
         assert body_json["count"] == "5"
         assert body_json["signature"]["source"] == "NASA/JPL SBDB Close Approach Data API"
         assert len(body_json["fields"]) == 11
+
+    def test_200_Verify_Status_Code_400(self):
+        headers = {
+            'user-agent': 'Chrome/109.0.0.0',
+            'content-type': 'application/json',
+            'accept': '*/*'
+        }
+
+        params = {
+            'WRONG': "WRONG",
+            'date-min': "1900-01-01",
+            'date-max': 'WRONG',
+            'dist-max': '0.2'
+        }
+
+        url = ConfigMan.BACKEND_URL
+        response, content = Request.GET(url, headers, params=params)
+        ###############################
+        assert (response.status_code == 400)
+        assert (response.elapsed.total_seconds() < ConfigMan.DEFAULT_RESPONSE_TIME)
+
+    def test_300_Verify_Status_Code_405(self):
+        headers = {
+            'user-agent': 'Chrome/109.0.0.0',
+            'content-type': 'application/json',
+            'accept': '*/*'
+        }
+
+        params = {
+            'des': "433",
+            'date-min': "1900-01-01",
+            'date-max': '2100-01-01',
+            'dist-max': '0.2'
+        }
+
+        url = ConfigMan.BACKEND_URL
+        response, content = Request.DELETE(url, headers, params=params)
+        ###############################
+        assert (response.status_code == 405)
+        assert (response.elapsed.total_seconds() < ConfigMan.DEFAULT_RESPONSE_TIME)
 
 if __name__ == '__main__':
     unittest.main()
