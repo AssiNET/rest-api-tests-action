@@ -12,7 +12,7 @@ Run Test Framework in Docker Container
 Run Tests locally - 2 way of doing it:
 ---
 1) Just run `pytest` in the project root
-2) Engage the testing framework by running `python runner.py --set smoke_test.py`
+2) Engage the testing framework by running `python runner.py --set smoke_test`
 
 Note: The 2nd option will engage the REST API framework.
 
@@ -21,7 +21,7 @@ REST API Framework key features:
 1) The framework has a custom wrapper on top of the requests library which provides friendly logging of the requests-respose, headers, body, content
 2) Special reporting mechanism consists of human-readable HTML report and XML report for Jenkins integration.
 You can explore and run the showcase test by simply executing
-`python runner.py --set smoke_test.py`
+`python runner.py --set smoke_test`
 Results can be easily found in timestamped `2023-02-07_00-38-42_smoke_test` folder in the `results` directory. 
 There is also latest folder for easy integration - for example with Jenkins
 
