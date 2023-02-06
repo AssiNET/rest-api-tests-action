@@ -69,6 +69,32 @@ class SmokeTests(unittest.TestCase):
         assert body_json["signature"]["source"] == "NASA/JPL SBDB Close Approach Data API"
         assert len(body_json["fields"]) == 11
 
+    def test_150_Verify_Close_Approach_Data_Sorted_by_Distance(self):
+        headers = {
+            'user-agent': 'Chrome/109.0.0.0',
+            'content-type': 'application/json',
+            'accept': '*/*'
+        }
+
+        params = {
+            'dist-max': "10LD",
+            'date-min': "2018-01-01",
+            'sort': "dist",
+        }
+
+        url = ConfigMan.BACKEND_URL
+        response, content = Request.GET(url, headers, params=params)
+        ###############################
+        assert (response.status_code == 200)
+        assert (response.elapsed.total_seconds() < 10)
+
+        body_json = response.json()
+        assert body_json["count"] == "4313"
+
+        #TODO
+        #assert dist is ordered
+        #assert min year in each item at least 2018 - check all items
+
     def test_200_Verify_Status_Code_400(self):
         headers = {
             'user-agent': 'Chrome/109.0.0.0',
