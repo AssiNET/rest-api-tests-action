@@ -18,7 +18,7 @@ Note: The 2nd option will engage the REST API framework.
 
 REST API Framework key features:
 ---
-1) The framework has a custom wrapper on top of the requests library which provides friendly logging of the requests-respose, headers, body, content
+1) The framework has a custom wrapper on top of the requests library which provides friendly logging of the requests-respose, headers, body, content - check `example-report.html` to check the friendly wrapper output of each test
 2) Special reporting mechanism consists of human-readable HTML report and XML report for Jenkins integration.
 You can explore and run the showcase test by simply executing
 `python runner.py --set smoke_test`
