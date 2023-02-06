@@ -5,9 +5,9 @@ Run Test Framework in Docker Container
 3) Execute at root level `docker build -t rest-framework-image` to build your image
 4) Execute at root level `docker run -d -t rest-framework-image` to run container from the image
 5) Get the results from the container
-    a) `docker cp %contained_id%dd0b13f106309839324d:/rest-api-tests-action/results/latest %your_local_path%`
+    - `docker cp %contained_id%dd0b13f106309839324d:/rest-api-tests-action/results/latest %your_local_path%`
         You will have human readable HTML Report + XML report
-    b) mount a volume - this is not implemented on purpose - we use Jenkins and GitHub Actions to take care of the report
+    - mount a volume - this is not implemented on purpose - we use Jenkins and GitHub Actions to take care of the report
 
 Run Tests locally - 2 way of doing it:
 ---
@@ -32,8 +32,8 @@ Run Tests in Github Actions:
 3) Run workflow from the button against main branch
 4) Open the last currently running RUN
 5) Below you can explore
-    a) download test results area (contains HTML REPORT + XML REPORT)
-    b) build summary pass/fail tests
+    - download test results area (contains HTML REPORT + XML REPORT)
+    - build summary pass/fail tests
 6) Open build box with green tick
 7) You can Explore all steps of the build
 8) Open HTML REPORT LINK and click the link -> You will be redirected to latest human readable HTML Report hosted on GitHub Pages
