@@ -439,7 +439,7 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>index.html</h1>
-    <p>Report generated on 06-Feb-2023 at 22:07:25 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 06-Feb-2023 at 22:08:45 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
@@ -461,8 +461,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.10.9</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 0.45 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>3 tests ran in 1.11 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">3 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -476,16 +476,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
       <tbody class="passed results-table-row">
         <tr>
           <td class="col-result">Passed</td>
-          <td class="col-name">tests/smoke_test.py::SmokeTests::test_100_Register_New_User</td>
-          <td class="col-duration">0.35</td>
+          <td class="col-name">tests/smoke_test.py::SmokeTests::test_100_Verify_Close_Approach_Data</td>
+          <td class="col-duration">0.38</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
             <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
-##############################################################
-##### tests.smoke_test.SmokeTests.test_100_Register_New_User
-##############################################################
-
 ########################################################
 #######################  REQUEST  ###################### 
 GET https://ssd-api.jpl.nasa.gov/cad.api?des=433&amp;date-min=1900-01-01&amp;date-max=2100-01-01&amp;dist-max=0.2 HTTP/1.1
@@ -507,7 +503,7 @@ accept: */*
 ======== RESPONSE HEADERS ========
 
 HTTP/1.1 200 OK
-Date: Mon, 06 Feb 2023 22:07:25 GMT
+Date: Mon, 06 Feb 2023 22:08:44 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -602,7 +598,101 @@ Server: nginx
         &quot;version&quot;: &quot;1.4&quot;
     }
 }
-ELAPSED TIME: 0.356
+ELAPSED TIME: 0.38
+########################   END   ###################### 
+#######################################################
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/smoke_test.py::SmokeTests::test_200_Verify_Status_Code_400</td>
+          <td class="col-duration">0.30</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+########################################################
+#######################  REQUEST  ###################### 
+GET https://ssd-api.jpl.nasa.gov/cad.api?WRONG=WRONG&amp;date-min=1900-01-01&amp;date-max=WRONG&amp;dist-max=0.2 HTTP/1.1
+No Auth
+
+======== REQUEST HEADERS ========
+user-agent: Chrome/109.0.0.0
+content-type: application/json
+accept: */*
+
+======== REQUEST BODY ========
+
+---- Body is Empty ----
+
+
+##############################################################
+##########################  RESPONSE  ######################## 
+
+======== RESPONSE HEADERS ========
+
+HTTP/1.1 400 Bad Request
+Date: Mon, 06 Feb 2023 22:08:44 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: nginx
+
+======== RESPONSE BODY ========
+---- JSON ----
+{
+    &quot;code&quot;: &quot;400&quot;,
+    &quot;message&quot;: &quot;one or more query parameter was not recognized&quot;,
+    &quot;moreInfo&quot;: &quot;https://ssd-api.jpl.nasa.gov/doc/cad.html&quot;
+}
+ELAPSED TIME: 0.306
+########################   END   ###################### 
+#######################################################
+<br/></div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">tests/smoke_test.py::SmokeTests::test_300_Verify_Status_Code_405</td>
+          <td class="col-duration">0.32</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log"> ------------------------------Captured stdout call------------------------------ <br/>
+########################################################
+#######################  REQUEST  ###################### 
+DELETE https://ssd-api.jpl.nasa.gov/cad.api?des=433&amp;date-min=1900-01-01&amp;date-max=2100-01-01&amp;dist-max=0.2 HTTP/1.1
+No Auth
+
+======== REQUEST HEADERS ========
+user-agent: Chrome/109.0.0.0
+content-type: application/json
+accept: */*
+
+======== REQUEST BODY ========
+
+---- Body is Empty ----
+
+
+##############################################################
+##########################  RESPONSE  ######################## 
+
+======== RESPONSE HEADERS ========
+
+HTTP/1.1 405 Method Not Allowed
+Date: Mon, 06 Feb 2023 22:08:45 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Server: nginx
+
+======== RESPONSE BODY ========
+---- JSON ----
+{
+    &quot;code&quot;: &quot;405&quot;,
+    &quot;message&quot;: &quot;Invalid HTTP method: must be GET or POST&quot;,
+    &quot;moreInfo&quot;: &quot;https://ssd-api.jpl.nasa.gov/doc/cad.html&quot;
+}
+ELAPSED TIME: 0.324
 ########################   END   ###################### 
 #######################################################
 <br/></div></td></tr></tbody></table></body></html>
